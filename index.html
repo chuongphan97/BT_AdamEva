@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam Eva</title>
+</head>
+<body>
+    <script>
+        class Apple{
+            constructor(weight){
+                this.weight=10;
+            }
+            decrease(){
+                if (this.weight >0) this.weight--;
+
+            }
+            isEmpty(){
+                if (this.weight ==0) return true;
+                else return false;
+            }
+            getWeight(){
+                return this.weight;
+            }
+        }
+
+        class Human{
+            constructor(name,gender,weight){
+                this.name = name;
+                this.gender = gender;
+                this.weight = weight;
+            }
+            isMale(){
+                if (this.gender == "male") return true;
+                else return false;
+            }
+            getGender(){
+                return this.gender;
+            }
+
+            setGender(gender){
+                this.gender = gender;
+            }
+
+            checkApple(apple){
+                return apple.getWeight();
+            }
+            eatApple(apple){
+                apple.decrease();
+                this.weight+=1;
+            }
+            say(something){
+                alert(`${this.name} say: ${something}`);
+            }
+            getName(){
+                return this.name;
+            }
+            setName(name){
+                this.name = name;
+            }
+            getWeight(){
+                return this.weight;
+            }
+            setWeight(weight){
+                this.weight=weight;
+            }
+
+        }
+
+        let apple = new Apple();
+        let adam = new Human("Adam","male",40);
+
+
+        document.write(`Qua tao nang ${apple.getWeight()} <br>`);
+        document.write(`${adam.name} gioi tinh ${adam.getGender()} nang ${adam.getWeight()}<br>`);
+
+        document.write(`${adam.name} an tao<br>`);
+        adam.eatApple(apple);
+        document.write(`${adam.name} nang ${adam.getWeight()}<br>`);
+
+        document.write(`Qua tao nang ${apple.getWeight()} <br>`);
+        adam.eatApple(apple);
+        adam.eatApple(apple);
+        adam.eatApple(apple);
+        adam.eatApple(apple);
+        adam.eatApple(apple);
+        adam.eatApple(apple);
+        adam.eatApple(apple);
+        adam.eatApple(apple);
+        adam.eatApple(apple);
+        if (apple.getWeight() == 0) adam.say('het tao roi');
+        document.write(`${adam.name} nang ${adam.getWeight()}<br>`);
+        document.write(`Qua tao nang ${apple.getWeight()} <br>`);
+
+    </script>
+</body>
+</html>
